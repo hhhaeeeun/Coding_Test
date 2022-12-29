@@ -6,7 +6,10 @@ int m, n, l, k;
 int main()
 {
 
-	int sum[10001] = { 0, };
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	int sum[100001] = { 0, };
 
 	cin >> m;
 	cin >> n;
@@ -20,7 +23,7 @@ int main()
 	{
 		cin >> l;
 		cin >> k;
-		cout << sum[k] - sum[l - 1] << endl;
+		cout << sum[k] - sum[l - 1] << "\n";
 	}
 	return 0;
 }
