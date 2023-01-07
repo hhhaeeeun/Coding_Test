@@ -9,7 +9,6 @@ int dx[4] = { 0,-1,0,1 };
 
 int bfs(int y, int x)
 {
-	fill(&visited[0][0], &visited[51][51], 0);
 	int ret = 0;
 	queue<pair<int, int>> q;
 	visited[y][x] = 1;
@@ -23,11 +22,15 @@ int bfs(int y, int x)
 			int ny = _y + dy[i];
 			int nx = _x + dx[i];
 			if (ny < 0 || ny >= n || nx < 0 || nx >= m)continue;
-			if (visited[ny][nx]) continue;
-			if (A[ny][nx] == 1)continue;
-			visited[ny][nx] = visited[_y][_x] + 1;
-			ret = max(ret, visited[ny][nx]);
-			q.push({ ny,nx });
+			if (visited[ny][nx] == 0 && A[ny][nx] == 0)
+			{
+				visited[ny][nx] = visited[_y][_x] + 1;
+				if (ret < visited[ny][nx])
+				{
+					ret = visited[ny][nx];
+				}
+				q.push({ ny,nx });
+			}
 		}
 	}
 	return ret - 1;
@@ -46,11 +49,11 @@ int main()
 		for (int j = 0; j < m; j++)
 		{
 			if (s[j] == 'W')A[i][j] = 1;
-			else if (s[j] == 'L') A[i][j] = 0;
+			else A[i][j] = 0;
 		}
 	}
 
-	int ret = 0;
+	int max = 0;
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < m; j++)
@@ -58,11 +61,16 @@ int main()
 			if (A[i][j] == 0)
 			{
 				int now = bfs(i, j);
-				ret = max(ret, now);
+				memset(visited, 0, sizeof(visited));
+				//fill(&visited[0][0], &visited[50][51], 0);
+				if (max < now)
+				{
+					max = now;
+				}
 			}
 		}
 	}
 
-	cout << ret << "\n";
+	cout << max << "\n";
 	return 0;
 }
