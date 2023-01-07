@@ -74,3 +74,12 @@ int main()
 	cout << max << "\n";
 	return 0;
 }
+
+
+
+//int visited[50][50]
+//memset(visited, 0, sizeof(visited));
+// memset(배열 이름, 초기화 값, 배열 크기);
+//fill(&visited[0][0], &visited[49][50], 0);
+//fill(&arr[0][0], &arr[ROW - 1][COL], value)
+//fill(시작 위치, 끝나는 위치 + 1, 초기화 값);
