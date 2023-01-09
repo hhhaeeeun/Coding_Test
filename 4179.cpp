@@ -61,7 +61,7 @@ void F_bfs(int sy, int sx)
 
 int main()
 {
-	int ret = 2147483647;
+	int ret = 987654321;
 	ios::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
@@ -101,7 +101,7 @@ int main()
 		}
 	}
 
-	if (ret == 2147483647)
+	if (ret == 987654321)
 		cout << "IMPOSSIBLE\n";
 	else
 		cout << ret<< "\n";
