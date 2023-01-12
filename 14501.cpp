@@ -44,8 +44,6 @@ int main()
 		sum = 0;
 		dfs(i);
 	}
-
-
 	cout << ret << "\n";
 	return 0;
 }
