@@ -68,10 +68,12 @@ int main()
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < m; j++) {
 			for (int k = 0; k < 4; k++)
-				temp = all_sum(i, j, k);
-			if (temp != -1)
 			{
-				ret = max(ret, temp);
+				temp = all_sum(i, j, k);
+				if (temp != -1)
+				{
+					ret = max(ret, temp);
+				}
 			}
 		}
 	}
