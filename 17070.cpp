@@ -3,8 +3,6 @@
 #include<vector>
 using namespace std;
 int n;
-int dy[3] = { 0, 1, 1 };
-int dx[3] = { 1, 0, 1 };
 int a[18][18];
 int dp[18][18][3];
 //0 °¡·Î
@@ -44,7 +42,7 @@ int main() {
 			dp[i][j][1] = dp[i - 1][j][2];
 			dp[i][j][1] += dp[i - 1][j][1];
 			dp[i][j][0] = dp[i][j - 1][2];
-			dp[i][j][0] += dp[i][j - 1][1];
+			dp[i][j][0] += dp[i][j - 1][0];
 		}
 	}
 	int ret = 0;
