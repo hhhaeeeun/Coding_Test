@@ -142,8 +142,6 @@ int main(int argc, char** argv)
 		}
 		
 	}
-
-
 	int ans = 0;
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < m; j++) {
@@ -151,7 +149,6 @@ int main(int argc, char** argv)
 				ans += a[i][j];
 		}
 	}
-
 	cout << ans;
 	return 0;
 }
