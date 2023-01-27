@@ -81,7 +81,6 @@ void MoveSHARK() {
 		if (v[i].dead == true)continue;
 		a[v[i].y][v[i].x] = i;
 	}
-
 	return;
 }
 int GetFish(int col) {

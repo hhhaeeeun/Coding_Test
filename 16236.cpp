@@ -81,7 +81,6 @@ int main() {
     int ret = 0;
     int ans = 0;
     while (ret != -1) {
-
         ret = bfs(shark.first, shark.second, visited);
         if (ret == -1) break;
         ans += ret;
