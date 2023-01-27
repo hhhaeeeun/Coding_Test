@@ -1,6 +1,0 @@
-*.text
-x64/
-*.vcxprj
-*.vcxprj.folters
-*.vcxprj.user
-CUBE.cpp
