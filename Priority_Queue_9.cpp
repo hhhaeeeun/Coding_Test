@@ -12,12 +12,16 @@ int main() {
 		int x = 0; cin >> x;
 		if (x == 0) {
 			int y = 0;
-			tie(ignore, y) = pq.top();
-			cout << y << endl;
-			pq.pop();
+			if (pq.size()) {
+				tie(ignore, y) = pq.top();
+				cout << -y << endl;
+				pq.pop();
+			}
+			else
+				cout << "0\n";
 		}
 		else {
-			pq.push({ -abs(x), x });
+			pq.push({ -abs(x), -x });
 		}
 	}
 	return 0;
