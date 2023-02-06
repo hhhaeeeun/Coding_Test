@@ -32,13 +32,9 @@ int main() {
 		mapper[i] = cnt;
 		cnt++;
 	}
-
 	for (auto i : points) {
 		++prefix_sum[mapper[i.first]][mapper[i.second]];
 	}
-
-
-
 	for (int i = 1; i < cnt; i++) {
 		for (int j = 1; j < cnt; j++) {
 			prefix_sum[i][j] += prefix_sum[i - 1][j] + prefix_sum[i][j - 1] - prefix_sum[i - 1][j - 1];
